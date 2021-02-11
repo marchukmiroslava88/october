@@ -66,6 +66,11 @@ return [
             'region'    => 'IAD',
         ],
 
+        'kitsoft-local' => [
+            'driver' => 'kitsoft-local',
+            'root'   => storage_path('app'),
+        ],
+
     ],
 
 ];
