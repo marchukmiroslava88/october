@@ -1,0 +1,25 @@
+FROM php:7.1-fpm
+
+ARG DOCKER_PHP_UID
+ENV DOCKER_PHP_UID=$DOCKER_PHP_UID
+ENV DEBIAN_FRONTEND=noninteractive
+ENV XDEBUG_VERSION=2.5.5
+
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends apt-utils
+RUN apt-get upgrade -y
+
+RUN apt-get install -y libgd-dev libpq-dev
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
+RUN docker-php-ext-install zip gd pdo_pgsql
+
+RUN pecl install xdebug-${XDEBUG_VERSION}
+RUN docker-php-ext-enable xdebug
+
+RUN usermod -u ${DOCKER_PHP_UID} www-data
+RUN curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/local/bin
+
+RUN apt-get clean\
+ && rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/*
+
+RUN ln -sf /var/www/html/artisan /usr/local/bin/
