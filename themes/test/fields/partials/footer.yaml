@@ -1,0 +1,35 @@
+tabs:
+  fields:
+    fields[logo]:
+      label: Логотип
+      tab: Главное
+      type: mediafinder
+      mode: image
+      span: left
+    fields[footerContacts]:
+        label: Контакты
+        type: repeater
+        tab: Контакты
+        maxItems: 6
+        form:
+          fields:
+            title:
+              label: Текст
+            fields[items]:
+              label: Пункты
+              type: repeater
+              tab: Контакты
+              maxItems: 4
+              form:
+                fields:
+                  text:
+                    label: Текст
+                  value:
+                    label: Значение
+                  type:
+                    label: Тип
+                    type: balloon-selector
+                    options:
+                      text: Текст
+                      phone: Телефон
+                      email: Email

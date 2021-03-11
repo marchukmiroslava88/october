@@ -1,0 +1,16 @@
+tabs:
+  fields:
+    fields[brand]:
+      label: Бренд
+      tab: Главное
+      span: left
+    fields[phone]:
+      tab: Главное
+      label: Основной телефон
+      span: right
+    fields[logo]:
+      label: Логотип
+      tab: Главное
+      type: mediafinder
+      mode: image
+      span: left

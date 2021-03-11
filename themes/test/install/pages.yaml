@@ -1,0 +1,11 @@
+step: 10
+selectable: false
+
+items:
+  homepage:
+    attributes:
+      title: Головна
+      slug: /
+      layout: home
+      sluggable: false
+      is_system: true
