@@ -4,10 +4,10 @@
     <h1 class="mb-4">{{ product.title }}</h1>
     <div class="row">
         <div class="col-lg-4">
-            {% if product.attachments|length > 1 %}
+            {% if product.featured_images|length > 1 %}
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    {% for image in product.attachments %}
+                    {% for image in product.featured_images %}
                         <div class="carousel-item {% if loop.index0 %} active {% endif %}" style="height: 350px; background: #e6e6e6">
                             <img class="d-block w-100" src="{{ image.path }}" alt="First slide">
                         </div>
@@ -23,7 +23,7 @@
                 </a>
             </div>
             {% else %}
-                {% set image = product.attachments|first.path ?? 'assets/images/default-image.png'|theme %}
+                {% set image = product.featured_images|first.path ?? 'assets/images/default-image.png'|theme %}
                 <div class="" style="height: 350px; background: #e6e6e6">
                     <img class="d-block w-100" src="{{ image }}" alt="image">
                 </div>

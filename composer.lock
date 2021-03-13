@@ -1919,7 +1919,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:marchukmiroslava88/Catalog.git",
-                "reference": "38f2ab72b748e9f58df8022b506f16763870dca8"
+                "reference": "e7df28c1ae8f5c695bc78ccdfc62d2c7dca0ff0b"
             },
             "type": "october-plugin",
             "authors": [
@@ -1928,7 +1928,7 @@
                     "email": "m.marchuk@kitsoft.kiev.ua"
                 }
             ],
-            "time": "2021-03-13T22:39:36+00:00"
+            "time": "2021-03-13T23:04:58+00:00"
         },
         {
             "name": "opis/closure",
