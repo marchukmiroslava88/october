@@ -7,11 +7,11 @@ tabs:
       mode: image
       span: left
     fields[footerContacts]:
-        label: Контакты
+      label: Контакты
         type: repeater
         tab: Контакты
         maxItems: 6
-        form:
+          form:
           fields:
             title:
               label: Текст

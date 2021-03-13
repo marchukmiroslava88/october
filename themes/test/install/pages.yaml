@@ -1,11 +1,37 @@
 step: 10
 selectable: false
+routes:
+  OnlineStore\Catalog\Models\Product: catalog/:slug
 
 items:
   homepage:
     attributes:
-      title: Головна
+      title: Главная
       slug: /
       layout: home
       sluggable: false
       is_system: true
+
+  catalog:
+    attributes:
+      title: Каталог
+      slug: catalog
+      layout: catalog
+      sluggable: false
+      is_system: true
+    components:
+      catalog:
+        class: OnlineStore\Catalog\Components\Products
+    childs:
+      product:
+        attributes:
+          title: Товар
+          slug: :slug
+          sluggable: true
+          layout: product
+          is_system: true
+        components:
+          product:
+            class: OnlineStore\Catalog\Components\Product
+            attributes:
+              slug: "{{ :slug }}"

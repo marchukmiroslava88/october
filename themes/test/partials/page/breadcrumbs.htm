@@ -1,0 +1,20 @@
+{% set breadcrumbs = __SELF__.breadcrumbs %}
+
+{% if breadcrumbs|length %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ '/'|url }}">Home</a></li>
+        {% for item in breadcrumbs %}
+            {% if loop.last %}
+            <li class="breadcrumb-item active" aria-current="page">
+                {{ this.page.title }}
+            </li>
+            {% else %}
+            <li class="breadcrumb-item">
+                <a href="{{ item.url|url }}" {% if item.target %}target="{{ item.target }}" {% endif %}>{{ item.title }}</a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+</nav>
+{% endif %}

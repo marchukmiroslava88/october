@@ -1,0 +1,33 @@
+{% set page = __SELF__.data %}
+
+<div class="container">
+    {% partial 'page/breadcrumbs' %}
+
+    <section class="content-wrapper pt-0">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="page_title-text">{{ page.title }}</h3>
+
+                <ul class="list-group">
+                    {% if page.childs|length %}
+                        {% for child in page.childs if not child.fields.navigation_hidden %}
+                        <li class="list-group-item">
+                            {% if child.fields.link.url %}
+                                <a target="{{ child.fields.link.target }}" href="{{ child.fields.link.url|url }}" class="">{{ child.title }}</a>
+                            {% else %}
+                                <a href="{{ child.url|url }}">{{ child.title }}</a>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+                {% if page.content|length > 0 %}
+                    <div class="editor-content">
+                        {{ page.content|raw }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</div>
+

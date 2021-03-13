@@ -1,0 +1,21 @@
+{% set products = __SELF__ . products %}
+
+<section class="container mt-5">
+    <h1 class="mb-4">Каталог</h1>
+    <div class="row">
+        {% for product in products %}
+            <div class="col-4">
+                <div class="card" style="width: 18rem; height: 100%; background: #e6e6e6">
+                    {% set image = product.attachments|first.path ?? 'assets/images/default-image.png'|theme %}
+                    <img class="card-img-top" src="{{ image }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="/catalog/{{ product.slug }}">{{ product.title }}</a>
+                        </h5>
+                        <p class="card-text">{{ product.short_description }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
