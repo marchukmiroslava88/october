@@ -1,7 +1,8 @@
 step: 10
 selectable: false
 routes:
-  OnlineStore\Catalog\Models\Product: catalog/:slug
+    OnlineStore\Catalog\Models\Category: shop/:id
+    OnlineStore\Catalog\Models\Product: shop/:id/:slug
 
 items:
   homepage:
@@ -11,27 +12,42 @@ items:
       layout: home
       sluggable: false
       is_system: true
-
-  catalog:
+    components:
+      categories:
+        class: OnlineStore\Catalog\Components\Categories
+  shop:
     attributes:
-      title: Каталог
-      slug: catalog
-      layout: catalog
+      title: Категории
+      slug: shop
+      layout: shop
       sluggable: false
       is_system: true
     components:
-      catalog:
-        class: OnlineStore\Catalog\Components\Products
+      categories:
+        class: OnlineStore\Catalog\Components\Categories
     childs:
-      product:
+      catalog:
         attributes:
-          title: Товар
-          slug: :slug
+          title: Каталог
+          slug: :id
+          layout: catalog
           sluggable: true
-          layout: product
           is_system: true
         components:
-          product:
-            class: OnlineStore\Catalog\Components\Product
+          catalog:
+            class: OnlineStore\Catalog\Components\Products
             attributes:
-              slug: "{{ :slug }}"
+              slug: "{{ :id }}"
+        childs:
+          product:
+            attributes:
+              title: Товар
+              slug: :slug
+              sluggable: true
+              layout: product
+              is_system: true
+            components:
+              product:
+                class: OnlineStore\Catalog\Components\Product
+                attributes:
+                  slug: "{{ :slug }}"
