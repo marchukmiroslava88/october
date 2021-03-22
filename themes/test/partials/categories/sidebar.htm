@@ -1,0 +1,10 @@
+{% set categories = __SELF__ . categories %}
+
+<h3 class="mb-3 mt-5">Каталог</h3>
+<ul class="list-group">
+    {% for category in categories %}
+    <li class="list-group-item">
+        <a href="shop/{{ category.slug }}">{{ category.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
