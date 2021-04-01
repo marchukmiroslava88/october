@@ -43,6 +43,11 @@
         },
         {
             "type": "git",
+            "url": "git@gitlab.com:KitSoft/OctoberCMS/TagsManager.git",
+            "reference": "refs/tags"
+        },
+        {
+            "type": "git",
             "url": "git@github.com:marchukmiroslava88/Catalog.git",
             "reference": "refs/tags"
         },
@@ -60,6 +65,7 @@
         "laravel/framework": "~6.0",
         "wikimedia/composer-merge-plugin": "dev-feature/composer-v2 as 1.5.0",
         "kitsoft/pages": "dev-master",
+        "kitsoft/tagsmanager-plugin": "dev-master",
         "onlinestore/catalog-plugin": "dev-master"
     },
     "require-dev": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "861741dabedadf8c24dcc9c2ece273a3",
+    "content-hash": "1ba6556623a78238b468f50bd74e00c7",
     "packages": [
         {
             "name": "composer/installers",
@@ -906,6 +906,26 @@
                 }
             ],
             "time": "2020-12-03T12:27:53+00:00"
+        },
+        {
+            "name": "kitsoft/tagsmanager-plugin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@gitlab.com:KitSoft/OctoberCMS/TagsManager.git",
+                "reference": "0bf1ba2321509e4f3bfcbf65544a4289023add75"
+            },
+            "type": "october-plugin",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maksym Nozhkin",
+                    "email": "n.maxym@gmail.com"
+                }
+            ],
+            "time": "2020-12-24T14:14:08+00:00"
         },
         {
             "name": "laravel/framework",
@@ -1919,7 +1939,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:marchukmiroslava88/Catalog.git",
-                "reference": "49d71a37cce55d3fe22fb88bef47367c77d0b879"
+                "reference": "30e65fd7673984263311f1864f528869d5a2433e"
             },
             "type": "october-plugin",
             "authors": [
@@ -1928,7 +1948,7 @@
                     "email": "m.marchuk@kitsoft.kiev.ua"
                 }
             ],
-            "time": "2021-03-22T11:01:10+00:00"
+            "time": "2021-04-01T14:38:35+00:00"
         },
         {
             "name": "opis/closure",
@@ -6302,6 +6322,7 @@
     "stability-flags": {
         "wikimedia/composer-merge-plugin": 20,
         "kitsoft/pages": 20,
+        "kitsoft/tagsmanager-plugin": 20,
         "onlinestore/catalog-plugin": 20
     },
     "prefer-stable": true,
