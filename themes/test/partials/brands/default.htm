@@ -1,0 +1,38 @@
+{% set brands = __SELF__ . brands %}
+
+<section class="container mt-5">
+    <h1 class="mb-4">{{ brands.title }}</h1>
+    <div class="row">
+        {% for brand in brands|slice(0, 4) %}
+        <div class="col-3">
+            <div class="border p-2">
+                <p>{{ brand.title }}</p>
+                <div class="d-flex" style="height: 180px">
+                    <img class="m-auto" style="max-width: 100%; max-height: 100%;" src="{{ brand.brand_logo.path }}" alt="">
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="collapse" id="brands">
+        <div class="row mt-5">
+            <div class="col-3">
+                <div class="border p-2">
+                    {% for brand in brands|slice(4, brands|length) %}
+                    <p>{{ brand.title }}</p>
+                    <div class="d-flex" style="height: 180px">
+                        <img class="m-auto" style="max-width: 100%; max-height: 100%;" src="{{ brand.brand_logo.path }}" alt="">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if brands|length > 4 %}
+    <div class="pl-15 mt-2">
+        <span class="btn btn-info collapsed" id="showAllBrandsBtn" data-toggle="collapse" data-target="#brands">{{ 'Показати ще' }} {{ (brands|length - 4)|brandsFilter }}</span>
+    </div>
+    {% endif %}
+
+</section>

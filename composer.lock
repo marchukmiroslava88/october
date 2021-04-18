@@ -1939,7 +1939,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:marchukmiroslava88/Catalog.git",
-                "reference": "30e65fd7673984263311f1864f528869d5a2433e"
+                "reference": "82933e63b5ff9ed0f7efd16f3082cea238aa0ff2"
             },
             "type": "october-plugin",
             "authors": [
@@ -1948,7 +1948,7 @@
                     "email": "m.marchuk@kitsoft.kiev.ua"
                 }
             ],
-            "time": "2021-04-01T14:38:35+00:00"
+            "time": "2021-04-18T15:21:44+00:00"
         },
         {
             "name": "opis/closure",
@@ -6333,5 +6333,6 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.2"
-    }
+    },
+    "plugin-api-version": "1.1.0"
 }
